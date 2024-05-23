@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Willkommen</title>
+</head>
+<body>
+    <h1>Willkommen!</h1>
+    <p>Dies ist eine einfache Willkommensseite.</p>
+
+    <!-- Button für die Weiterleitung zur Bitcoin-Seite -->
+    <button onclick="redirectToBitcoin()">Zur Bitcoin-Seite</button>
+
+    <!-- Button für die API-Dokumentation -->
+    <button onclick="redirectToAPI()">API-Dokumentation</button>
+
+    <script>
+        // Funktion zum Weiterleiten zur Bitcoin-Seite
+        function redirectToBitcoin() {
+            window.location.href = 'http://localhost:3000/bitcoin.html?coin=btc';
+        }
+
+        // Funktion zum Weiterleiten zur API-Dokumentation
+        function redirectToAPI() {
+            window.location.href = 'http://localhost:3000/api';
+        }
+    </script>
+</body>
+</html>
