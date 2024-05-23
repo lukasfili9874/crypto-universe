@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin Details</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+        #coin-details {
+            background: #fff;
+            max-width: 500px;
+            margin: 20px;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        #coin-logo {
+            max-width: 120px;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 50%;
+            border: 2px solid #e32121;
+            padding: 10px;
+        }
+        #coin-name {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            color: #e32121;
+        }
+        #coin-symbol {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        #coin-description {
+            font-size: 1em;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        #coin-website {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #e32121;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: background-color 0.3s ease;
+        }
+        #coin-website:hover {
+            background-color: #c91c1c;
+        }
+        .coin-button {
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .coin-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div id="coin-details">
+        <h1 id="coin-name"></h1>
+        <p id="coin-symbol"></p>
+        <img id="coin-logo" src="" alt="Coin Logo">
+        <p id="coin-description"></p>
+        <a id="coin-website" href="" target="_blank">Visit Website</a>
+    </div>
+    <button id="back-coin" class="coin-button">Previous Coin</button>
+    <button id="next-coin" class="coin-button">Next Coin</button>
+
+    <script>
+        // Lade die JSON-Datei per AJAX
+var xhr = new XMLHttpRequest();
+xhr.open('GET', 'data.json', true);
+xhr.onreadystatechange = function() {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+        var jsonData = JSON.parse(xhr.responseText);
+        displayCoinDetails(jsonData);
+    }
+};
+xhr.send();
+
+// Funktion zum Anzeigen der Münzdetails basierend auf der URL
+function displayCoinDetails(data) {
+    const urlParams = new URLSearchParams(window.location.search);
+    const coinSymbol = urlParams.get('coin');
+
+    if (coinSymbol && coinSymbol in data) {
+        const coinData = data[coinSymbol];
+
+        document.getElementById('coin-name').innerText = coinData.name;
+        document.getElementById('coin-symbol').innerText = coinData.symbol;
+        document.getElementById('coin-logo').src = coinData.logo;
+        document.getElementById('coin-description').innerText = coinData.description;
+        document.getElementById('coin-website').href = coinData.website;
+
+        // Füge den Event-Listener zum Button hinzu
+        document.getElementById('next-coin').addEventListener('click', function() {
+            // Holen der verfügbaren Symbole
+            const symbols = Object.keys(data);
+            
+            // Bestimmen des Index des aktuellen Coins
+            const currentIndex = symbols.indexOf(coinSymbol);
+
+            // Bestimmen des Index des nächsten Coins
+            const nextIndex = (currentIndex + 1) % symbols.length;
+
+            // Navigieren zum nächsten Coin
+            window.location.href = `?coin=${symbols[nextIndex]}`;
+
+          
+
+        });
+        if (coinSymbol != "btc"){
+                document.getElementById('back-coin').addEventListener('click', function() {
+            const symbols = Object.keys(data)
+
+            // Bestimmen des Index des aktuellen Coins
+            const currentIndex = symbols.indexOf(coinSymbol);
+
+            // Bestimmen des Index des nächsten Coins
+            const nextIndex = (currentIndex - 1) % symbols.length;
+
+            // Navigieren zum nächsten Coin
+            window.location.href = `?coin=${symbols[nextIndex]}`;
+        });
+            }
+       
+        
+
+
+    } else {
+        // Wenn das Symbol nicht gefunden wurde, gib eine entsprechende Meldung aus
+        document.getElementById('coin-details').innerHTML = '<p>Coin not found</p>';
+    }
+}
+
+    </script>
+</body>
+</html>

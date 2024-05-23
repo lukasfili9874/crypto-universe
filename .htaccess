@@ -1,0 +1,4 @@
+# Cache Images for one month
+<FilesMatch "\.(jpg|jpeg|png|gif|svg)$">
+  Header set Cache-Control "max-age=2592000, public"
+</FilesMatch>
