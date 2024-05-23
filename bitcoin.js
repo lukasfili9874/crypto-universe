@@ -19,6 +19,8 @@ app.get('/api', (req, res) => {
   res.sendFile(indexPath);
   
 });
+// Statische Dateien (HTML, CSS, JS) bereitstellen
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Pfad zur JSON-Datei definieren
 const dataPath = path.join(__dirname, 'public', 'data.json');
@@ -40,7 +42,7 @@ fs.readFile(dataPath, 'utf8', (err, data) => {
 });
 
 // Routen für verschiedene Coins
-app.get('api/cryptocurrency/:coin', (req, res) => {
+app.get('/api/cryptocurrency/:coin', (req, res) => {
   const coin = req.params.coin.toLowerCase();
 
   if (jsonData && jsonData[coin]) {
