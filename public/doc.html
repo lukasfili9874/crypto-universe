@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>API Documentation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
         body {
             font-family: monospace;
@@ -14,6 +16,7 @@
             color: #333;
             padding: 20px;
         }
+
         h1 {
             font-family: monospace;
             text-align: center;
@@ -21,6 +24,7 @@
             font-size: 36px;
             margin-bottom: 20px;
         }
+
         h2 {
             font-family: monospace;
             color: #00a7f7;
@@ -28,6 +32,7 @@
             margin-top: 30px;
             margin-bottom: 10px;
         }
+
         h3 {
             font-family: monospace;
             color: #75b0cb;
@@ -35,6 +40,7 @@
             margin-top: 20px;
             margin-bottom: 5px;
         }
+
         table {
             font-family: monospace;
             width: 100%;
@@ -42,17 +48,21 @@
             margin-top: 10px;
             margin-bottom: 20px;
         }
-        th, td {
+
+        th,
+        td {
             font-family: monospace;
             padding: 10px;
             text-align: left;
             border-bottom: 1px solid #ddd;
         }
+
         th {
             font-family: monospace;
             background-color: #f2f2f2;
             color: #333;
         }
+
         pre {
             font-family: monospace;
             background-color: #2b2b2b;
@@ -63,38 +73,86 @@
             margin-top: 10px;
             margin-bottom: 20px;
         }
+
         code {
             font-family: monospace;
-            
+
         }
+
         p {
             font-family: monospace;
             margin-top: 10px;
         }
 
 
-        comments{
+        comments {
             color: rgb(165, 165, 165);
         }
-        let{
-            color: #ee70ff;;
+
+        let {
+            color: #ee70ff;
+            ;
         }
-        method{
+
+        method {
             color: rgb(95, 183, 255);
         }
 
-        string{
+        string {
             color: rgb(198, 255, 113);
         }
 
-        proberty{
+        proberty {
             color: rgb(255, 103, 103);
         }
+
+
+     /* Change background color of the active button */
+#v-pills-tab .nav-link {
+    border: 1px solid black;
+    background-color: #f8f9fa; /* Default background color */
+    color: #000; /* Default text color */
+}
+
+#v-pills-tab .nav-link.active {
+    color: white; /* Text color for active tabs */
+}
+
+#v-pills-ok-tab.active {
+    background-color: #28a745; /* Green for 200 OK */
+}
+
+#v-pills-forbidden-tab.active {
+    background-color: #fd7e14; /* Orange for 403 Forbidden */
+}
+
+#v-pills-notfound-tab.active {
+    background-color: #dc3545; /* Red for 404 Page not found */
+}
+
+/* Optional: Add hover effects */
+#v-pills-tab .nav-link:hover {
+    color: white;
+}
+
+#v-pills-ok-tab:hover {
+    background-color: #218838; /* Darker green for hover */
+}
+
+#v-pills-forbidden-tab:hover {
+    background-color: #e8590c; /* Darker orange for hover */
+}
+
+#v-pills-notfound-tab:hover {
+    background-color: #c82333; /* Darker red for hover */
+}
+
     </style>
 </head>
+
 <body>
     <h1>Welcome to the API Documentation</h1>
-    
+
     <h2>Bitcoin Data API</h2>
     <p>
         Explore the Bitcoin Data API and retrieve information about various cryptocurrencies.
@@ -146,50 +204,97 @@
             <td>Cardano</td>
             <td>Cardano ist eine dezentrale Plattform, die komplexe programmierbare...</td>
         </tr>
+
+        <tr>
+            <td>...</td>
+        </tr>
         <!-- Weitere Einträge für andere Coins hier einfügen -->
     </table>
 
     <h3>Example</h3>
+
     <p>Retrieve data for Bitcoin using the following example code:</p>
-    <pre><code>
-1   <comments>//Define the variables of your html div where you want to display the DATA</comments>
-2   <let>let</let> bitcoinDiv = document.<method>getElementById</method>(<string>'bitcoin'</string>);
-3   <let>let</let> bitcoinLogo = document.<method>getElementById</method>(<string>'bitcoin-logo'</string>);
-4
-5   <comments>//Define the URL and setup the response structure</comments>
-6    <method>fetch</method>(<string>'http://209.38.254.29/api/cryptocurrency/btc'</string>)
-7       <method>.then</method>(response <let>=></let> response.<method>json</method><let>()</let>)
-8       <method>.then</method>(data <let>=> {</let>
-9
-10       <comments>//Display the JSON DATA here</comments>
-11         <let>let</let> bitcoinJsonName = data.<proberty>name</proberty>;
-12         <let>let</let> bitcoinJsonLogo = data.<proberty>logo</proberty>;
-13
-14         <let>let</let> image = document.<method>createElement</method>('<string>img</string>');
-15         image.<proberty>src</proberty> = bitcoinJsonLogo;
-16         bitcoinDiv.<proberty>innerHTML</proberty> = bitcoinJsonName;        
-17         bitcoinLogo.<method>appendChild</method>(image);
-19          });
-20
-21    <comments>//Catch for errors</comments>
-22    <method>.catch</method>(error <let>=> {</let> console.<method>error</method>(<string>'Error fetching data:'</string>, error);
-23      });
-24 
-    </code></pre>
+
+    <pre><code></code>1 <comments>   //Define the URL and setup the response structure</comments>
+2    <method>fetch</method>(<string>'http://209.38.254.29/api/cryptocurrency/btc'</string>)
+3       <method>.then</method>(response <let>=></let> response.<method>json</method><let>()</let>)
+4       <method>.then</method>(data <let>=> {</let>
+5
+6       <comments>//Display the JSON DATA here</comments>
+7        console<method>.log</method>(data.<proberty>name</proberty>);
+7        console<method>.log</method>(data.<proberty>symbol</proberty>);
+8      
+10   <comments>//Catch for errors</comments>
+11   <method>.catch</method>(error <let>=> {</let> console.<method>error</method>(<string>'Error fetching data:'</string>, error);
+12     });</code></pre>
+
+
+
+<hr>
 
     <h3>Response</h3>
     <p>
-        The API returns JSON data containing information about the requested cryptocurrency, including name, symbol, logo, and description.
+        The API returns JSON data containing information about the requested cryptocurrency, including name, symbol,
+        logo, description and website. Status Code is provided too!
     </p>
-
+    <hr>
+    <h3>Response JSON Code</h3>
+    <p></p>
+    <div class="">
+        <div class="nav nav-pills mb-3" id="v-pills-tab" role="tablist">
+          <button class="nav-link active" id="v-pills-ok-tab" data-bs-toggle="pill" data-bs-target="#v-pills-ok" type="button" role="tab" aria-controls="v-pills-ok" aria-selected="true">200 OK</button>
+          <button class="nav-link" id="v-pills-forbidden-tab" data-bs-toggle="pill" data-bs-target="#v-pills-forbidden" type="button" role="tab" aria-controls="v-pills-forbidden" aria-selected="false">403 Forbidden</button>
+          <button class="nav-link" id="v-pills-notfound-tab" data-bs-toggle="pill" data-bs-target="#v-pills-notfound" type="button" role="tab" aria-controls="v-pills-notfound" aria-selected="false">404 Page not found</button>
+        </div>
+        <div class="tab-content" id="v-pills-tabContent">
+          <div class="tab-pane fade show active" id="v-pills-ok" role="tabpanel" aria-labelledby="v-pills-ok-tab" tabindex="0">
+            <pre><code>1<comments>  //http://209.38.254.29/api/cryptocurrency/btc</comments>
+2  {  
+3    <proberty>"name"</proberty> : <string>"Bitcoin"</string>,
+4    <proberty>"symbol"</proberty> : <string>"BTC"</string>,
+5    <proberty>"logo"</proberty> : <string>"https://s2.coinmarketcap.com/static/img/coins/..."</string>,
+6    <proberty>"description"</proberty> : <string>"Bitcoin ist eine dezentrale digitale Währun..."</string>,
+7    <proberty>"website"</proberty> : "<string>https://www.bitcoin.org"</string>,
+8
+9    <proberty>"metadata"</proberty>: {
+10        <proberty>"status_code"</proberty>:<string>200</string>
+11      }
+12 }
+</code></pre>
+          </div>
+          <div class="tab-pane fade" id="v-pills-forbidden" role="tabpanel" aria-labelledby="v-pills-forbidden-tab" tabindex="0">
+<pre><code>1<comments>  //http://209.38.254.29/NOACCES</comments>
+2  {
+3    <proberty>"status_code"</proberty> : <string>"403"</string>,
+4    <proberty>"status_msg"</proberty> : <string>"Forbidden"</string>,
+5    <proberty>"time_stamp"</proberty> : <string>"1716584806572"</string>,
+6    <proberty>"request"</proberty> : <string>"User does not have access to this resource"</string>,
+7  }</code></pre>
+          </div>
+          <div class="tab-pane fade" id="v-pills-notfound" role="tabpanel" aria-labelledby="v-pills-notfound-tab" tabindex="0">
+            <pre><code>1<comments>  //http://209.38.254.29/api/PATHNOTEXIST</comments>
+2  {
+3    <proberty>"status_code"</proberty> : <string>"404"</string>,
+4    <proberty>"status_msg"</proberty> : <string>"path_not_found"</string>,
+5    <proberty>"time_stamp"</proberty> : <string>"1716584806572"</string>,
+6    <proberty>"request"</proberty> : <string>"Error occurred with path: {path}"</string>,
+7  }</code></pre>
+          </div>
+        </div>
+    </div>
+<hr>
     <h3>Error Handling</h3>
     <p>
         If the requested cryptocurrency is not found, the API returns a 404 error.
     </p>
-
+<hr>
     <h3>Rate Limiting</h3>
     <p>
         This API currently does not implement rate limiting.
     </p>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
+
 </html>

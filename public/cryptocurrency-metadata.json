@@ -4,7 +4,10 @@
         "symbol": "BTC",
         "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png",
         "description": "Bitcoin ist eine dezentrale digitale Währung, die ohne eine zentrale Bank oder einen einzelnen Administrator auskommt und von Benutzer zu Benutzer im Peer-to-Peer-Bitcoin-Netzwerk ohne die Notwendigkeit von Zwischenhändlern gesendet werden kann.",
-        "website": "https://www.bitcoin.org"
+        "website": "https://www.bitcoin.org",
+        "metadata": {
+            "status_code": 200
+        }
     },
     "eth": {
         "name": "Ethereum",
