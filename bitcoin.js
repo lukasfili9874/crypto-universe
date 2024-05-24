@@ -3,6 +3,9 @@ const app = express();
 const path = require('path');
 const fs = require('fs');
 const { url } = require('inspector');
+const { message } = require('statuses');
+const { get } = require('http');
+const database = require('mime-db');
 
 // Statische Dateien (HTML, CSS, JS) bereitstellen
 app.use(express.static(path.join(__dirname, 'public')));
@@ -14,6 +17,23 @@ app.get('/', (req, res) => {
   
 });
 
+
+
+app.get('/api', (req, res) => {
+  const location = "/api"
+  res.json({
+    
+    "status_code":"404",
+    "status_msg" : "Forbidden",
+    "time_stamp": Date.now(),
+    "request": "Error occured with" + " {" + location + "} ",
+
+  })
+
+ 
+
+})
+
 app.get('/api/documentation', (req, res) => {
   const indexPath = path.join(__dirname, 'public', 'doc.html');
   res.sendFile(indexPath);
@@ -23,7 +43,7 @@ app.get('/api/documentation', (req, res) => {
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Pfad zur JSON-Datei definieren
-const dataPath = path.join(__dirname, 'public', 'data.json');
+const dataPath = path.join(__dirname, 'public', 'cryptocurrency-metadata.json');
 
 // JSON-Daten einmal lesen
 let jsonData = null;
@@ -43,7 +63,7 @@ fs.readFile(dataPath, 'utf8', (err, data) => {
 
 
 app.get("/api/cryptocurrency", (req, res) => {
-  const indexPath = path.join(__dirname, 'public', 'data.json');
+  const indexPath = path.join(__dirname, 'public', 'cryptocurrency-metadata.json');
   res.sendFile(indexPath)
 })
 // Routen für verschiedene Coins
@@ -53,9 +73,22 @@ app.get('/api/cryptocurrency/:coin', (req, res) => {
   if (jsonData && jsonData[coin]) {
     res.json(jsonData[coin]);
   } else {
-    res.status(404).send('Coin not found');
+    let time_stamp = Date.now()
+    res.json({
+      
+      "status_code":"404",
+      "status_msg" : "Coin not Found",
+      "time_stamp": Date.now(),
+      "request": "Error occured with" + " {" + coin + "} ",
+
+    });
+    
+    
   }
 });
+
+
+
 
 // Server starten
 const PORT = process.env.PORT || 3000;
