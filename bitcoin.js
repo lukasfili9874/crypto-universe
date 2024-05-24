@@ -2,45 +2,29 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const fs = require('fs');
-const { url } = require('inspector');
-const { message } = require('statuses');
-const { get } = require('http');
-const database = require('mime-db');
 
 // Statische Dateien (HTML, CSS, JS) bereitstellen
 app.use(express.static(path.join(__dirname, 'public')));
-
 
 app.get('/', (req, res) => {
   const indexPath = path.join(__dirname, 'public', 'index.html');
   res.sendFile(indexPath);
-  
 });
 
-
-
 app.get('/api', (req, res) => {
-  const location = "/api"
-  res.json({
-    
-    "status_code":"404",
-    "status_msg" : "Forbidden",
+  const location = "/api";
+  res.status(404).json({
+    "status_code": "404",
+    "status_msg": "path_not_found",
     "time_stamp": Date.now(),
-    "request": "Error occured with" + " {" + location + "} ",
-
-  })
-
- 
-
-})
+    "request": `Error occurred with {${location}}`
+  });
+});
 
 app.get('/api/documentation', (req, res) => {
   const indexPath = path.join(__dirname, 'public', 'doc.html');
   res.sendFile(indexPath);
-  
 });
-// Statische Dateien (HTML, CSS, JS) bereitstellen
-app.use(express.static(path.join(__dirname, 'public')));
 
 // Pfad zur JSON-Datei definieren
 const dataPath = path.join(__dirname, 'public', 'cryptocurrency-metadata.json');
@@ -61,11 +45,11 @@ fs.readFile(dataPath, 'utf8', (err, data) => {
   }
 });
 
-
 app.get("/api/cryptocurrency", (req, res) => {
   const indexPath = path.join(__dirname, 'public', 'cryptocurrency-metadata.json');
-  res.sendFile(indexPath)
-})
+  res.sendFile(indexPath);
+});
+
 // Routen für verschiedene Coins
 app.get('/api/cryptocurrency/:coin', (req, res) => {
   const coin = req.params.coin.toLowerCase();
@@ -73,22 +57,24 @@ app.get('/api/cryptocurrency/:coin', (req, res) => {
   if (jsonData && jsonData[coin]) {
     res.json(jsonData[coin]);
   } else {
-    let time_stamp = Date.now()
-    res.json({
-      
-      "status_code":"404",
-      "status_msg" : "Coin not Found",
+    res.status(404).json({
+      "status_code": "404",
+      "status_msg": "Coin not Found",
       "time_stamp": Date.now(),
-      "request": "Error occured with" + " {" + coin + "} ",
-
+      "request": `Error occurred with {${coin}}`
     });
-    
-    
   }
 });
 
-
-
+// Fallback für alle anderen ungültigen Endpunkte
+app.use((req, res, next) => {
+  res.status(404).json({
+    "status_code": "404",
+    "status_msg": "path_not_found",
+    "time_stamp": Date.now(),
+    "request": `Error occurred with path: ${req.originalUrl}`
+  });
+});
 
 // Server starten
 const PORT = process.env.PORT || 3000;
