@@ -89,7 +89,9 @@
 
     <h3>Example</h3>
     <p>Retrieve data for Bitcoin using the following example code:</p>
-    <pre><code>const url = 'http://localhost:3000/cryptocurrency/api/btc';
+    <pre><code>
+        const baseUrl = window.location.origin;
+const url = `${baseUrl}/cryptocurrency/api/btc`;
 
 fetch(url)
     .then(response => response.json())
@@ -97,7 +99,9 @@ fetch(url)
         console.log('Bitcoin Data:', data);
         // Handle the data as needed
     })
-    .catch(error => console.error('Error fetching Bitcoin data:', error));</code></pre>
+    .catch(error => console.error('Error fetching Bitcoin data:', error));
+
+    </code></pre>
 
     <h3>Response</h3>
     <p>
