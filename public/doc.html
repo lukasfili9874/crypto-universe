@@ -65,11 +65,30 @@
         }
         code {
             font-family: monospace;
-            color: #f8f8f2;
+            
         }
         p {
             font-family: monospace;
             margin-top: 10px;
+        }
+
+
+        comments{
+            color: rgb(165, 165, 165);
+        }
+        let{
+            color: #ee70ff;;
+        }
+        method{
+            color: rgb(95, 183, 255);
+        }
+
+        string{
+            color: rgb(198, 255, 113);
+        }
+
+        proberty{
+            color: rgb(255, 103, 103);
         }
     </style>
 </head>
@@ -90,8 +109,13 @@
         </tr>
         <tr>
             <td>GET</td>
-            <td>/cryptocurrency/api/:coin</td>
-            <td>Retrieves data for a specific cryptocurrency.</td>
+            <td>/api/cryptocurrency</td>
+            <td>Rettrives data for all cryptocurrency we provide</td>
+        </tr>
+        <tr>
+            <td>GET</td>
+            <td>/api/cryptocurrency/{symbol}</td>
+            <td>Retrieves data for a specific cryptocurrency based on the symbol you can find in the Coin List.</td>
         </tr>
     </table>
 
@@ -103,14 +127,24 @@
             <th>Description</th>
         </tr>
         <tr>
-            <td>BTC</td>
+            <td>btc</td>
             <td>Bitcoin</td>
             <td>Bitcoin ist eine dezentrale digitale Währung...</td>
         </tr>
         <tr>
-            <td>ETH</td>
+            <td>eth</td>
             <td>Ethereum</td>
             <td>Ethereum ist ein dezentrales, quelloffenes Blockchain-System...</td>
+        </tr>
+        <tr>
+            <td>link</td>
+            <td>Chainlink</td>
+            <td>Chainlink ist ein dezentrales Oracle-Netzwerk...</td>
+        </tr>
+        <tr>
+            <td>ada</td>
+            <td>Cardano</td>
+            <td>Cardano ist eine dezentrale Plattform, die komplexe programmierbare...</td>
         </tr>
         <!-- Weitere Einträge für andere Coins hier einfügen -->
     </table>
@@ -118,16 +152,29 @@
     <h3>Example</h3>
     <p>Retrieve data for Bitcoin using the following example code:</p>
     <pre><code>
-        const baseUrl = window.location.origin;
-        const url = `${baseUrl}/cryptocurrency/api/btc`;
-
-        fetch(url)
-            .then(response => response.json())
-            .then(data => {
-                console.log('Bitcoin Data:', data);
-                // Handle the data as needed
-            })
-            .catch(error => console.error('Error fetching Bitcoin data:', error));
+1   <comments>//Define the variables of your html div where you want to display the DATA</comments>
+2   <let>let</let> bitcoinDiv = document.<method>getElementById</method>(<string>'bitcoin'</string>);
+3   <let>let</let> bitcoinLogo = document.<method>getElementById</method>(<string>'bitcoin-logo'</string>);
+4
+5   <comments>//Define the URL and setup the response structure</comments>
+6    <method>fetch</method>(<string>'http://209.38.254.29/api/cryptocurrency/btc'</string>)
+7       <method>.then</method>(response <let>=></let> response.<method>json</method><let>()</let>)
+8       <method>.then</method>(data <let>=> {</let>
+9
+10       <comments>//Display the JSON DATA here</comments>
+11         <let>let</let> bitcoinJsonName = data.<proberty>name</proberty>;
+12         <let>let</let> bitcoinJsonLogo = data.<proberty>logo</proberty>;
+13
+14         <let>let</let> image = document.<method>createElement</method>('<string>img</string>');
+15         image.<proberty>src</proberty> = bitcoinJsonLogo;
+16         bitcoinDiv.<proberty>innerHTML</proberty> = bitcoinJsonName;        
+17         bitcoinLogo.<method>appendChild</method>(image);
+19          });
+20
+21    <comments>//Catch for errors</comments>
+22    <method>.catch</method>(error <let>=> {</let> console.<method>error</method>(<string>'Error fetching data:'</string>, error);
+23      });
+24 
     </code></pre>
 
     <h3>Response</h3>

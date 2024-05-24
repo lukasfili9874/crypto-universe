@@ -90,7 +90,7 @@
     <script>
         // Lade die JSON-Datei per AJAX
 var xhr = new XMLHttpRequest();
-xhr.open('GET', 'data.json', true);
+xhr.open('GET', 'cryptocurrency-metadata.json', true);
 xhr.onreadystatechange = function() {
     if (xhr.readyState == 4 && xhr.status == 200) {
         var jsonData = JSON.parse(xhr.responseText);

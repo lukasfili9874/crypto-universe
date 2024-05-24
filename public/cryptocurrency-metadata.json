@@ -1,0 +1,555 @@
+{
+    "btc": {
+        "name": "Bitcoin",
+        "symbol": "BTC",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png",
+        "description": "Bitcoin ist eine dezentrale digitale Währung, die ohne eine zentrale Bank oder einen einzelnen Administrator auskommt und von Benutzer zu Benutzer im Peer-to-Peer-Bitcoin-Netzwerk ohne die Notwendigkeit von Zwischenhändlern gesendet werden kann.",
+        "website": "https://www.bitcoin.org"
+    },
+    "eth": {
+        "name": "Ethereum",
+        "symbol": "ETH",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png",
+        "description": "Ethereum ist ein dezentrales, quelloffenes Blockchain-System, das Smart Contract-Funktionalität bietet.",
+        "website": "https://ethereum.org"
+    },
+    "usdt": {
+        "name": "Tether",
+        "symbol": "USDT",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/825.png",
+        "description": "Tether (USDT) ist ein Stablecoin, der an den Wert des US-Dollars gekoppelt ist. Er wird verwendet, um Stabilität im volatilen Kryptowährungsmarkt zu bieten und wird von Tether Limited unterstützt.",
+        "website": "https://tether.to"
+    },
+    "bnb": {
+        "name": "Binance Coin",
+        "symbol": "BNB",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/1839.png",
+        "description": "Binance Coin (BNB) ist die Kryptowährung, die von der Binance-Börse ausgegeben wird und mit dem BNB-Symbol gehandelt wird. Sie wird verwendet, um Handelsgebühren auf der Binance-Plattform zu bezahlen und kann in verschiedenen Binance-Unterprojekten verwendet werden.",
+        "website": "https://www.binance.com"
+    },
+    "sol": {
+        "name": "Solana",
+        "symbol": "SOL",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/5426.png",
+        "description": "Solana ist eine leistungsstarke Blockchain, die Erbauern weltweit hilft, Krypto-Apps zu erstellen, die heute skalieren.",
+        "website": "https://solana.com"
+    },
+    "usdc": {
+        "name": "USD Coin",
+        "symbol": "USDC",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png",
+        "description": "USD Coin (USDC) ist eine Art Kryptowährung, die als Stablecoin bezeichnet wird. Du kannst jederzeit 1 USD Coin gegen 1 US-Dollar einlösen, was ihm einen stabilen Preis verleiht.",
+        "website": "https://www.centre.io/usdc"
+    },
+    "xrp": {
+        "name": "Ripple",
+        "symbol": "XRP",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/52.png",
+        "description": "XRP ist der native digitale Vermögenswert des Ripple-Systems. Er wird verwendet, um Transaktionen im Ripple-Netzwerk zu erleichtern und Liquidität bereitzustellen.",
+        "website": "https://ripple.com/xrp/"
+    },
+    "doge": {
+        "name": "Dogecoin",
+        "symbol": "DOGE",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/74.png",
+        "description": "Dogecoin (DOGE) ist eine Kryptowährung, die als Scherz begann, aber zu einer weit verbreiteten digitalen Währung geworden ist.",
+        "website": "https://dogecoin.com"
+    },
+    "ton": {
+        "name": "Toncoin",
+        "symbol": "TON",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/11419.png",
+        "description": "Toncoin ist die native Kryptowährung der TON-Blockchain, die entwickelt wurde, um schnelle Transaktionen zu ermöglichen und ein dezentrales Ökosystem zu unterstützen.",
+        "website": "https://ton.org"
+    },
+    "ada": {
+        "name": "Cardano",
+        "symbol": "ADA",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/2010.png",
+        "description": "Cardano (ADA) ist eine dezentrale Plattform, die komplexe programmierbare Werttransfers auf sichere und skalierbare Weise ermöglicht.",
+        "website": "https://cardano.org"
+    },
+    "avax": {
+        "name": "Avalanche",
+        "symbol": "AVAX",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/5805.png",
+        "description": "Avalanche (AVAX) ist eine Plattform zur Erstellung benutzerdefinierter Blockchain-Netzwerke und dezentraler Anwendungen.",
+        "website": "https://avax.network"
+    },
+    "shiba": {
+        "name": "Shiba Inu",
+        "symbol": "SHIBA",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/5994.png",
+        "description": "Shiba Inu (SHIBA) ist eine Meme-Münze, die Dogecoin ähnelt und darauf abzielt, eine Ethereum-basierte Alternative zu sein.",
+        "website": "https://shibatoken.com"
+    },
+    "dot": {
+        "name": "Polkadot",
+        "symbol": "DOT",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/6636.png",
+        "description": "Polkadot (DOT) ist eine Blockchain-Plattform, die darauf abzielt, verschiedenen Blockchains zu ermöglichen, Nachrichten und Werte in vertrauensfreier Weise zu übertragen, ihre einzigartigen Funktionen zu teilen und ihre Sicherheit zu bündeln.",
+        "website": "https://polkadot.network"
+    },
+    "tron": {
+        "name": "TRON",
+        "symbol": "TRX",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/1958.png",
+        "description": "TRON (TRX) ist eine blockchainbasierte dezentrale Plattform, die darauf abzielt, ein freies, globales digitales Content-Entertainment-System mit verteilter Speichertechnologie aufzubauen.",
+        "website": "https://tron.network"
+    },
+    "bitcoin_cash": {
+        "name": "Bitcoin Cash",
+        "symbol": "BCH",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/1831.png",
+        "description": "Bitcoin Cash (BCH) ist ein Hard Fork von Bitcoin, der als Peer-to-Peer-Elektronik-Geldsystem konzipiert wurde.",
+        "website": "https://bitcoincash.org"
+    },
+    "link": {
+        "name": "Chainlink",
+        "symbol": "LINK",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/1975.png",
+        "description": "Chainlink (LINK) ist ein dezentrales Oracle-Netzwerk, das es Smart Contracts ermöglicht, sicher mit realen Daten und Diensten außerhalb von Blockchain-Netzwerken zu interagieren.",
+        "website": "https://chain.link"
+    },
+    "near": {
+        "name": "NEAR Protocol",
+        "symbol": "NEAR",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/6535.png",
+        "description": "NEAR Protocol (NEAR) ist eine dezentrale Anwendungsplattform, die darauf ausgelegt ist, Apps im Web nutzbar zu machen.",
+        "website": "https://near.org"
+    },
+    "matic": {
+        "name": "Polygon",
+        "symbol": "MATIC",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/3890.png",
+        "description": "Polygon (MATIC) ist ein Protokoll und ein Framework zum Aufbau und Verbinden von Ethereum-kompatiblen Blockchain-Netzwerken.",
+        "website": "https://polygon.technology"
+    },
+    "ltc": {
+        "name": "Litecoin",
+        "symbol": "LTC",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/2.png",
+        "description": "Litecoin (LTC) ist eine Peer-to-Peer-Kryptowährung, die sofortige Zahlungen zu nahezu null Kosten an jeden in der Welt ermöglicht.",
+        "website": "https://litecoin.org"
+    },
+    "pepe": {
+        "name": "PepeCoin",
+        "symbol": "PEPE",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/19994.png",
+        "description": "PepeCoin (PEPE) ist eine Meme-basierte Kryptowährung, die vom beliebten Internet-Meme Pepe the Frog inspiriert ist.",
+        "website": "https://pepecoin.com"
+    },
+    "icp": {
+        "name": "Internet Computer",
+        "symbol": "ICP",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/8916.png",
+        "description": "Internet Computer (ICP) ist eine Blockchain-basierte Plattform, die schnelle Transaktionen und smarte Verträge ermöglicht.",
+        "website": "https://dfinity.org"
+    },
+    "uni": {
+        "name": "Uniswap",
+        "symbol": "UNI",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/7083.png",
+        "description": "Uniswap (UNI) ist ein dezentrales Handelsprotokoll, bekannt für seine Rolle beim Erleichtern des automatisierten Handels von DeFi-Token.",
+        "website": "https://uniswap.org"
+    },
+    "leo": {
+        "name": "UNUS SED LEO",
+        "symbol": "LEO",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/3957.png",
+        "description": "UNUS SED LEO (LEO) ist ein Utility-Token, der auf der iFinex-Plattform verwendet wird und das Ziel hat, Benutzer zu stärken.",
+        "website": "https://www.bitfinex.com"
+    },
+    "dai": {
+        "name": "Dai",
+        "symbol": "DAI",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/4943.png",
+        "description": "Dai (DAI) ist ein stabiler Coin, der durch Collateral auf der MakerDAO-Plattform gesichert ist.",
+        "website": "https://makerdao.com"
+    },
+    "etc": {
+        "name": "Ethereum Classic",
+        "symbol": "ETC",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/1321.png",
+        "description": "Ethereum Classic (ETC) ist eine Hard Fork der Ethereum-Blockchain, die Smart Contracts und dezentrale Anwendungen ermöglicht.",
+        "website": "https://ethereumclassic.org"
+    },
+    "rndr": {
+        "name": "Render Token",
+        "symbol": "RNDR",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/5690.png",
+        "description": "Render Token (RNDR) ist eine dezentrale GPU-Rendering-Lösung, die Künstlern ermöglicht, Rechenleistung von GPU-Besitzern zu nutzen.",
+        "website": "https://rendertoken.com"
+    },
+    "apt": {
+        "name": "Aptos",
+        "symbol": "APT",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/16086.png",
+        "description": "Aptos (APT) ist eine Layer-1-Blockchain, die auf Parallelität setzt und schnelle, sichere und skalierbare Transaktionen ermöglicht.",
+        "website": "https://aptosfoundation.org"
+    },
+    "hbar": {
+        "name": "Hedera",
+        "symbol": "HBAR",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/4642.png",
+        "description": "Hedera (HBAR) ist eine öffentliche Distributed-Ledger-Plattform, die schnelle, faire und sichere Anwendungen ermöglicht.",
+        "website": "https://hedera.com"
+    },
+    "imx": {
+        "name": "Immutable X",
+        "symbol": "IMX",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/10603.png",
+        "description": "Immutable X (IMX) ist eine Layer-2-Skalierungslösung für NFTs auf Ethereum, die schnelle und kostengünstige Transaktionen ermöglicht.",
+        "website": "https://immutable.com"
+    },
+    "atom": {
+        "name": "Cosmos",
+        "symbol": "ATOM",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/3794.png",
+        "description": "Cosmos (ATOM) ist ein dezentrales Netzwerk von unabhängigen, skalierbaren und interoperablen Blockchains.",
+        "website": "https://cosmos.network"
+    },
+    "mnt": {
+        "name": "Mantle",
+        "symbol": "MNT",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/22166.png",
+        "description": "Mantle (MNT) ist eine Layer-2-Skalierungslösung, die darauf abzielt, schnellere und günstigere Transaktionen zu ermöglichen.",
+        "website": "https://mantle.xyz"
+    },
+    "fdusd": {
+        "name": "First Digital USD",
+        "symbol": "FDUSD",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/10897.png",
+        "description": "First Digital USD (FDUSD) ist ein stabiler Coin, der durch den US-Dollar gedeckt ist.",
+        "website": "https://www.firstdigitallabs.com"
+    },
+    "fil": {
+        "name": "Filecoin",
+        "symbol": "FIL",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/2280.png",
+        "description": "Filecoin (FIL) ist ein dezentrales Speichernetzwerk, das darauf abzielt, den digitalen Speicherplatz zu revolutionieren.",
+        "website": "https://filecoin.io"
+    },
+    "cro": {
+        "name": "Cronos",
+        "symbol": "CRO",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/3635.png",
+        "description": "Cronos (CRO) ist die native Kryptowährung der Crypto.com-Plattform, die Zahlungs- und Handelslösungen bietet.",
+        "website": "https://cronos.org"
+    },
+    "xlm": {
+        "name": "Stellar",
+        "symbol": "XLM",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/512.png",
+        "description": "Stellar (XLM) ist eine Open-Source-Plattform, die den Transfer von digitalen Währungen und Fiat-Währungen erleichtert.",
+        "website": "https://stellar.org"
+    },
+    "kas": {
+        "name": "Kaspa",
+        "symbol": "KAS",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/15804.png",
+        "description": "Kaspa (KAS) ist eine Proof-of-Work-Kryptowährung, die schnelle Transaktionen und hohe Skalierbarkeit ermöglicht.",
+        "website": "https://kaspa.org"
+    },
+    "arb": {
+        "name": "Arbitrum",
+        "symbol": "ARB",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/11841.png",
+        "description": "Arbitrum (ARB) ist eine Layer-2-Skalierungslösung für Ethereum, die schnellere und kostengünstigere Transaktionen ermöglicht.",
+        "website": "https://arbitrum.io"
+    },
+    "grt": {
+        "name": "The Graph",
+        "symbol": "GRT",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/6719.png",
+        "description": "The Graph (GRT) ist ein dezentrales Protokoll für die Indexierung und Abfrage von Daten aus Blockchains.",
+        "website": "https://thegraph.com"
+    },
+    "okb": {
+        "name": "OKB",
+        "symbol": "OKB",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/3897.png",
+        "description": "OKB ist das native Utility-Token der OKEx-Plattform, das für verschiedene Funktionen innerhalb des OKEx-Ökosystems verwendet wird.",
+        "website": "https://www.okex.com"
+    },
+    "stx": {
+        "name": "Stacks",
+        "symbol": "STX",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/4847.png",
+        "description": "Stacks (STX) ist eine Layer-1-Blockchain-Lösung, die Smart Contracts und dezentrale Anwendungen auf Bitcoin bringt.",
+        "website": "https://stacks.co"
+    },
+    "wif": {
+        "name": "WiFi Coin",
+        "symbol": "WIF",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/5714.png",
+        "description": "WiFi Coin (WIF) ist eine Kryptowährung, die darauf abzielt, eine neue Dimension der drahtlosen Konnektivität zu schaffen.",
+        "website": "https://wificoin.io"
+    },
+    "op": {
+        "name": "Optimism",
+        "symbol": "OP",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/3155.png",
+        "description": "Optimism (OP) ist eine Layer-2-Skalierungslösung für Ethereum, die darauf abzielt, schnelle und kostengünstige Transaktionen zu ermöglichen.",
+        "website": "https://optimism.io"
+    },
+    "ar": {
+        "name": "Arweave",
+        "symbol": "AR",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/5632.png",
+        "description": "Arweave (AR) ist ein dezentrales Speichernetzwerk, das darauf abzielt, dauerhaft gespeicherte Daten zu sichern und zu teilen.",
+        "website": "https://arweave.org"
+    },
+    "mkr": {
+        "name": "Maker",
+        "symbol": "MKR",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/1518.png",
+        "description": "Maker (MKR) ist die Governance-Token der MakerDAO-Plattform, die es Benutzern ermöglicht, über Änderungen im System abzustimmen.",
+        "website": "https://makerdao.com"
+    },
+    "vet": {
+        "name": "VeChain",
+        "symbol": "VET",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/3077.png",
+        "description": "VeChain (VET) ist eine Blockchain-Plattform, die darauf abzielt, unternehmensfreundliche Lösungen zur Verfolgung und Authentifizierung von Produkten zu bieten.",
+        "website": "https://vechain.org"
+    },
+    "sui": {
+        "name": "Sui",
+        "symbol": "SUI",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/11840.png",
+        "description": "Sui (SUI) ist eine dezentrale Plattform für intelligente Verträge, die sich auf hohe Skalierbarkeit und Benutzerfreundlichkeit konzentriert.",
+        "website": "https://sui.io"
+    },
+    "inj": {
+        "name": "Injective",
+        "symbol": "INJ",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/7226.png",
+        "description": "Injective (INJ) ist ein dezentrales Protokoll für den Handel mit Derivaten und synthetischen Vermögenswerten.",
+        "website": "https://injective.com"
+    },
+    "theta": {
+        "name": "Theta Network",
+        "symbol": "THETA",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/2416.png",
+        "description": "Theta Network (THETA) ist ein dezentralisiertes Netzwerk, das den Vertrieb von Video-Streams erleichtert und dafür Token-Anreize bietet.",
+        "website": "https://thetatoken.org"
+    },
+    "ftm": {
+        "name": "Fantom",
+        "symbol": "FTM",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/3513.png",
+        "description": "Fantom (FTM) ist eine skalierbare Blockchain-Plattform für DeFi, Krypto-DApps und Unternehmensanwendungen.",
+        "website": "https://fantom.foundation"
+    },
+    "bonk": {
+        "name": "Bonk",
+        "symbol": "BONK",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/11641.png",
+        "description": "Bonk (BONK) ist eine Meme-Kryptowährung, die als erste Community-Meme-Coin auf der Solana-Plattform gestartet wurde.",
+        "website": "https://bonkcoin.com"
+    },
+    "floki": {
+        "name": "Floki Inu",
+        "symbol": "FLOKI",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/10207.png",
+        "description": "Floki Inu (FLOKI) ist eine Meme-Kryptowährung, die auf dem Dogecoin und dem Shiba Inu-Meme basiert.",
+        "website": "https://theflokiinu.com"
+    },
+    "rune": {
+        "name": "THORChain",
+        "symbol": "RUNE",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/4157.png",
+        "description": "THORChain (RUNE) ist ein dezentrales Liquiditätsprotokoll, das es Benutzern ermöglicht, Kryptowährungen über verschiedene Blockchains hinweg zu tauschen.",
+        "website": "https://thorchain.org"
+    },
+    "ldo": {
+        "name": "Lido DAO",
+        "symbol": "LDO",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/8000.png",
+        "description": "Lido DAO (LDO) ist eine dezentrale autonome Organisation, die Liquiditätslösungen für Staking auf verschiedenen Blockchain-Netzwerken bietet.",
+        "website": "https://lido.fi"
+    },
+    "fet": {
+        "name": "Fetch.ai",
+        "symbol": "FET",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/3773.png",
+        "description": "Fetch.ai (FET) ist ein dezentrales Protokoll, das maschinelles Lernen und KI für den Aufbau einer autonomen Wirtschaft einsetzt.",
+        "website": "https://fetch.ai"
+    },
+    "tia": {
+        "name": "TIA",
+        "symbol": "TIA",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/19640.png",
+        "description": "TIA (TIA) ist eine dezentrale Plattform, die sich auf Transparenz und Innovation im Blockchain-Bereich konzentriert.",
+        "website": "https://tia.io"
+    },
+    "ondo": {
+        "name": "Ondo",
+        "symbol": "ONDO",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/20655.png",
+        "description": "Ondo (ONDO) ist ein Protokoll für DeFi-Kreditlösungen, das sich auf flexible und nachhaltige Renditeoptionen konzentriert.",
+        "website": "https://ondo.finance"
+    },
+    "bgb": {
+        "name": "Bitget Token",
+        "symbol": "BGB",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/13934.png",
+        "description": "Bitget Token (BGB) ist das native Token der Bitget-Plattform, das für verschiedene Funktionen und Rabatte innerhalb des Ökosystems verwendet wird.",
+        "website": "https://www.bitget.com"
+    },
+    "pyth": {
+        "name": "Pyth Network",
+        "symbol": "PYTH",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/16832.png",
+        "description": "Pyth Network (PYTH) ist ein dezentrales Datenorakel, das hochwertige Marktdaten für DeFi-Protokolle bereitstellt.",
+        "website": "https://pyth.network"
+    },
+    "gala": {
+        "name": "Gala",
+        "symbol": "GALA",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/7080.png",
+        "description": "Gala (GALA) ist eine Blockchain-Gaming-Plattform, die es Entwicklern ermöglicht, Spiele auf der Blockchain zu erstellen und zu monetarisieren.",
+        "website": "https://gala.games"
+    },
+    "jup": {
+        "name": "Jupiter",
+        "symbol": "JUP",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/8508.png",
+        "description": "Jupiter (JUP) ist ein dezentralisiertes Protokoll, das es Benutzern ermöglicht, schnell und sicher Daten zu übertragen.",
+        "website": "https://jup.io"
+    },
+    "algo": {
+        "name": "Algorand",
+        "symbol": "ALGO",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/4030.png",
+        "description": "Algorand (ALGO) ist eine skalierbare und sichere Blockchain-Plattform, die schnelle und kostengünstige Transaktionen ermöglicht.",
+        "website": "https://algorand.com"
+    },
+    "sei": {
+        "name": "Sei",
+        "symbol": "SEI",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/24794.png",
+        "description": "Sei (SEI) ist eine Layer-1-Blockchain, die speziell für den DeFi-Sektor entwickelt wurde und auf hohe Leistung und niedrige Latenz setzt.",
+        "website": "https://seilabs.org"
+    },
+    "core": {
+        "name": "Core DAO",
+        "symbol": "CORE",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/13412.png",
+        "description": "Core DAO (CORE) ist eine dezentrale autonome Organisation, die darauf abzielt, eine interoperable und sichere Blockchain-Plattform zu schaffen.",
+        "website": "https://coredao.org"
+    },
+    "aave": {
+        "name": "Aave",
+        "symbol": "AAVE",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/7278.png",
+        "description": "Aave (AAVE) ist ein DeFi-Protokoll, das Benutzern ermöglicht, Kryptowährungen zu verleihen und zu leihen.",
+        "website": "https://aave.com"
+    },
+    "flow": {
+        "name": "Flow",
+        "symbol": "FLOW",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/4558.png",
+        "description": "Flow (FLOW) ist eine Blockchain-Plattform, die speziell für Spiele, Apps und digitale Assets entwickelt wurde.",
+        "website": "https://onflow.org"
+    },
+    "strk": {
+        "name": "Strike",
+        "symbol": "STRK",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/8585.png",
+        "description": "Strike (STRK) ist eine dezentrale Plattform für das Ausleihen und Verleihen von Kryptowährungen.",
+        "website": "https://strike.org"
+    },
+    "beam": {
+        "name": "Beam",
+        "symbol": "BEAM",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/3702.png",
+        "description": "Beam (BEAM) ist eine datenschutzorientierte Kryptowährung, die auf dem Mimblewimble-Protokoll basiert.",
+        "website": "https://beam.mw"
+    },
+    "ena": {
+        "name": "Ennacoin",
+        "symbol": "ENA",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/12345.png",
+        "description": "Ennacoin (ENA) ist eine dezentrale Kryptowährung, die für schnelle und sichere Zahlungen entwickelt wurde.",
+        "website": "https://ennacoin.org"
+    },
+    "akt": {
+        "name": "Akash Network",
+        "symbol": "AKT",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/7431.png",
+        "description": "Akash Network (AKT) ist ein dezentrales Cloud-Computing-Netzwerk, das darauf abzielt, die Bereitstellung von Cloud-Diensten zu revolutionieren.",
+        "website": "https://akash.network"
+    },
+    "bsv": {
+        "name": "Bitcoin SV",
+        "symbol": "BSV",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/3602.png",
+        "description": "Bitcoin SV (BSV) ist eine Hard Fork von Bitcoin Cash, die darauf abzielt, die ursprüngliche Vision von Bitcoin als Peer-to-Peer-Electronic-Cash-System zu realisieren.",
+        "website": "https://bitcoinsv.io"
+    },
+    "agix": {
+        "name": "SingularityNET",
+        "symbol": "AGIX",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/2424.png",
+        "description": "SingularityNET (AGIX) ist ein dezentrales Protokoll, das KI-Dienste über eine Blockchain zugänglich macht.",
+        "website": "https://singularitynet.io"
+    },
+    "btt": {
+        "name": "BitTorrent",
+        "symbol": "BTT",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/3718.png",
+        "description": "BitTorrent (BTT) ist ein dezentralisiertes Protokoll für das Teilen von Dateien und Inhalten, das auf der Tron-Blockchain basiert.",
+        "website": "https://www.bittorrent.com"
+    },
+    "axs": {
+        "name": "Axie Infinity",
+        "symbol": "AXS",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/6783.png",
+        "description": "Axie Infinity (AXS) ist ein Blockchain-basiertes Spiel, bei dem Spieler durch das Züchten, Kämpfen und Handeln von virtuellen Kreaturen Belohnungen verdienen können.",
+        "website": "https://axieinfinity.com"
+    },
+    "qnt": {
+        "name": "Quant",
+        "symbol": "QNT",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/3155.png",
+        "description": "Quant (QNT) ist ein Netzwerk, das verschiedene Blockchains miteinander verbindet, um die Interoperabilität zu verbessern.",
+        "website": "https://quant.network"
+    },
+    "dydx": {
+        "name": "dYdX",
+        "symbol": "DYDX",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/11156.png",
+        "description": "dYdX (DYDX) ist eine dezentrale Handelsplattform, die es Benutzern ermöglicht, Kryptowährungsderivate zu handeln.",
+        "website": "https://dydx.exchange"
+    },
+    "flr": {
+        "name": "Flare",
+        "symbol": "FLR",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/13112.png",
+        "description": "Flare (FLR) ist eine Layer-1-Blockchain, die Smart Contracts und Interoperabilität zwischen verschiedenen Blockchains ermöglicht.",
+        "website": "https://flare.xyz"
+    },
+    "neo": {
+        "name": "Neo",
+        "symbol": "NEO",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/1376.png",
+        "description": "Neo (NEO) ist eine Blockchain-Plattform für die Entwicklung digitaler Assets und Smart Contracts.",
+        "website": "https://neo.org"
+    },
+    "ron": {
+        "name": "Ronin",
+        "symbol": "RON",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/10958.png",
+        "description": "Ronin (RON) ist eine speziell entwickelte Blockchain für die Axie Infinity-Spielplattform.",
+        "website": "https://roninchain.com"
+    },
+    "chz": {
+        "name": "Chiliz",
+        "symbol": "CHZ",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/4066.png",
+        "description": "Chiliz (CHZ) ist eine Kryptowährung, die im Bereich des Sports und der Unterhaltung eingesetzt wird und Fan-Engagement und -Belohnungen ermöglicht.",
+        "website": "https://www.chiliz.com"
+    }
+}
