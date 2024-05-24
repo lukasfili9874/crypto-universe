@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
   
 });
 
-app.get('/api', (req, res) => {
+app.get('/api/documentation', (req, res) => {
   const indexPath = path.join(__dirname, 'public', 'doc.html');
   res.sendFile(indexPath);
   
@@ -41,6 +41,11 @@ fs.readFile(dataPath, 'utf8', (err, data) => {
   }
 });
 
+
+app.get("/api/cryptocurrency", (req, res) => {
+  const indexPath = path.join(__dirname, 'public', 'data.json');
+  res.sendFile(indexPath)
+})
 // Routen für verschiedene Coins
 app.get('/api/cryptocurrency/:coin', (req, res) => {
   const coin = req.params.coin.toLowerCase();
