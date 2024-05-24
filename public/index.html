@@ -7,10 +7,11 @@
 </head>
 <body>
     <h1>Willkommen!</h1>
-    <p>Dies ist eine einfache Willkommensseite.</p>
+    <p>Simple Crypto Data API</p>
 
-    <!-- Button für die Weiterleitung zur Bitcoin-Seite -->
-    <button onclick="redirectToBitcoin()">Zur Bitcoin-Seite</button>
+    <!-- Button für die Weiterleitung zur Bitcoin-Seite 
+    <button onclick="redirectToBitcoin()">Zur Bitcoin-Seite</button> 
+    -->
 
     <!-- Button für die API-Dokumentation -->
     <button onclick="redirectToAPI()">API-Dokumentation</button>
@@ -23,8 +24,44 @@
 
         // Funktion zum Weiterleiten zur API-Dokumentation
         function redirectToAPI() {
-            window.location.href = window.location.origin + '/api';
+            window.location.href = window.location.origin + '/api/documentation/';
         }
     </script>
 </body>
 </html>
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: monospace;
+    }
+    h1{
+
+        text-align: center;
+        background-color: #333;
+        color: white;
+    }
+    p{
+        margin-top: 20px;
+
+        font-weight: bolder;
+        text-align: center;
+    }
+
+    button{
+        margin-top: 20px;
+        padding: 6px 12px;
+        background-color: #ffffff;
+        border: 1px solid #333;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        
+    }
+
+    button:hover{
+        border: 1px dashed #333;
+        cursor: pointer;
+    }
+</style>
