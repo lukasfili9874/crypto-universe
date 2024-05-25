@@ -66,6 +66,13 @@ app.get('/api/cryptocurrency/:coin', (req, res) => {
   }
 });
 
+
+
+app.get('/api/prices', (req, res) => {
+  const indexPath = path.join(__dirname, 'public', 'prices.json');
+  res.sendFile(indexPath);
+});
+
 // Fallback für alle anderen ungültigen Endpunkte
 app.use((req, res, next) => {
   res.status(404).json({
@@ -81,3 +88,5 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server läuft auf Port ${PORT}`);
 });
+
+
