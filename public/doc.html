@@ -147,6 +147,13 @@
     background-color: #c82333; /* Darker red for hover */
 }
 
+@media (max-width: 480px) {
+    .description-column{
+        display: none;
+    }
+    
+}
+
     </style>
 </head>
 
@@ -163,17 +170,17 @@
         <tr>
             <th>HTTP Method</th>
             <th>Endpoint</th>
-            <th>Description</th>
+            <th class="description-column">Description</th>
         </tr>
         <tr>
             <td>GET</td>
             <td>/api/cryptocurrency</td>
-            <td>Rettrives data for all cryptocurrency we provide</td>
+            <td class="description-column">Rettrives data for all cryptocurrency we provide</td>
         </tr>
         <tr>
             <td>GET</td>
             <td>/api/cryptocurrency/{symbol}</td>
-            <td>Retrieves data for a specific cryptocurrency based on the symbol you can find in the Coin List.</td>
+            <td class="description-column">Retrieves data for a specific cryptocurrency based on the symbol you can find in the Coin List.</td>
         </tr>
     </table>
 
