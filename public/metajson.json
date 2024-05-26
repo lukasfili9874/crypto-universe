@@ -1,0 +1,54 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "Bitcoin",
+            "symbol": "btc"
+        },
+        {
+            "id": 2,
+            "name": "Ethereum",
+            "symbol": "eth"
+        },
+        {
+            "id": 3,
+            "name": "Tether",
+            "symbol": "usdt"
+        },
+        {
+            "id": 4,
+            "name": "Binance",
+            "symbol": "bnb"
+        },
+        {
+            "id": 5,
+            "name": "Solana",
+            "symbol": "sol"
+        },
+        {
+            "id": 6,
+            "name": "USDC",
+            "symbol": "usdc"
+        },
+        {
+            "id": 7,
+            "name": "Ripple Coin",
+            "symbol": "xrp"
+        },
+        {
+            "id": 8,
+            "name": "Dogecoin",
+            "symbol": "doge"
+        },
+        {
+            "id": 9,
+            "name": "Toncoin",
+            "symbol": "ton"
+        },
+        {
+            "id": 10,
+            "name": "Cardano",
+            "symbol": "ada"
+        }
+    ]
+}

@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
         body {
-            font-family: monospace;
+            
             line-height: 1.6;
             margin: 0;
             padding: 0;
@@ -19,26 +19,32 @@
 
         h1 {
             font-family: monospace;
+            font-weight: 900;
             text-align: center;
-            color: #00a7f7;
+            color: #000;
             font-size: 36px;
             margin-bottom: 20px;
         }
 
         h2 {
+            text-align: center;
             font-family: monospace;
-            color: #00a7f7;
+            color: #000;
             font-size: 24px;
             margin-top: 30px;
             margin-bottom: 10px;
         }
 
         h3 {
+            font-weight: 600;
+
             font-family: monospace;
-            color: #75b0cb;
+            border-bottom: 1px solid black;
+            color: black;
             font-size: 20px;
             margin-top: 20px;
             margin-bottom: 5px;
+        
         }
 
         table {
@@ -155,15 +161,45 @@
 }
 
     </style>
-</head>
 
+    <script>async function fetchGlobalMetrics() {
+        try {
+            const response = await fetch('http://localhost:3000/api/cryptocurrency/metajson');
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            const data = await response.json();
+            let cryptoDataDiv = document.getElementById('fetchDiv');
+    
+            let content = '';
+            data.data.slice(0, 10).forEach(coin => {
+                content += `
+                    <tr>
+                        <td>${coin.id}</td>
+                        <td>${coin.name}</td>
+                        <td>${coin.symbol}</td>
+                    </tr>
+                `;
+            });
+    
+            cryptoDataDiv.innerHTML = content;
+        } catch (error) {
+            console.error('Error fetching crypto data:', error);
+        }
+    }
+    
+    fetchGlobalMetrics();</script>
+</head>
 <body>
+
     <h1>Welcome to the API Documentation</h1>
 
-    <h2>Bitcoin Data API</h2>
-    <p>
-        Explore the Bitcoin Data API and retrieve information about various cryptocurrencies.
-    </p>
+    <pre><code>1    <comments>// Welcome to the Simple Bitcoin Data API</comments>
+2 
+3    Explore <method>the.</method>(<string>'Bitcoin Data API'</string>) <let>=></let> and 
+4    retrieve <proberty>information</proberty> about various cryptocurrencies.
+</code></pre> 
+    
 
     <h3>Endpoints</h3>
     <table>
@@ -174,68 +210,57 @@
         </tr>
         <tr>
             <td>GET</td>
-            <td>/api/cryptocurrency</td>
-            <td class="description-column">Rettrives data for all cryptocurrency we provide</td>
+            <td>/api/cryptocurrency/listings</td>
+            <td class="description-column">View every Coin we can provide at the moment</td>
         </tr>
         <tr>
             <td>GET</td>
-            <td>/api/cryptocurrency/{symbol}</td>
+            <td>/api/cryptocurrency/listings/{symbol}</td>
             <td class="description-column">Retrieves data for a specific cryptocurrency based on the symbol you can find in the Coin List.</td>
+        </tr>
+        <tr>
+            <td>GET</td>
+            <td>/api/cryptocurrency/tags</td>
+            <td class="description-column">Retrieves all tags exist. You can request Coins based on this Tags.</td>
+        </tr>
+        <tr>
+            <td>GET</td>
+            <td>/api/cryptocurrency/tags/{tagName}</td>
+            <td class="description-column">Retrieves specific coins based on the tags you can find in the Tag List.</td>
         </tr>
     </table>
 
     <h3>Coin List</h3>
     <table>
+        <thead>
         <tr>
-            <th>Symbol</th>
+            <th>id</th>
             <th>Name</th>
-            <th>Description</th>
+            <th>Symbol</th>
         </tr>
-        <tr>
-            <td>btc</td>
-            <td>Bitcoin</td>
-            <td>Bitcoin ist eine dezentrale digitale Währung...</td>
-        </tr>
-        <tr>
-            <td>eth</td>
-            <td>Ethereum</td>
-            <td>Ethereum ist ein dezentrales, quelloffenes Blockchain-System...</td>
-        </tr>
-        <tr>
-            <td>link</td>
-            <td>Chainlink</td>
-            <td>Chainlink ist ein dezentrales Oracle-Netzwerk...</td>
-        </tr>
-        <tr>
-            <td>ada</td>
-            <td>Cardano</td>
-            <td>Cardano ist eine dezentrale Plattform, die komplexe programmierbare...</td>
-        </tr>
-
-        <tr>
-            <td>...</td>
-        </tr>
-        <!-- Weitere Einträge für andere Coins hier einfügen -->
+    </thead>
+        <tbody id="fetchDiv">
+            <td></td>
+            <td></td>
+            <td></td>
+        </tbody>
     </table>
-
+    
     <h3>Example</h3>
-
     <p>Retrieve data for Bitcoin using the following example code:</p>
-
-    <pre><code></code>1 <comments>   //Define the URL and setup the response structure</comments>
-2    <method>fetch</method>(<string>'http://209.38.254.29/api/cryptocurrency/btc'</string>)
+    <pre><code>1 <comments>   //Define the URL and setup the response structure</comments>
+2    <method>fetch</method>(<string>'http://localhost:3000/api/cryptocurrency/listings/btc'</string>)
 3       <method>.then</method>(response <let>=></let> response.<method>json</method><let>()</let>)
 4       <method>.then</method>(data <let>=> {</let>
 5
 6       <comments>//Display the JSON DATA here</comments>
 7        console<method>.log</method>(data.<proberty>name</proberty>);
-7        console<method>.log</method>(data.<proberty>symbol</proberty>);
-8      
+8        console<method>.log</method>(data.<proberty>symbol</proberty>);
+9      })
 10   <comments>//Catch for errors</comments>
 11   <method>.catch</method>(error <let>=> {</let> console.<method>error</method>(<string>'Error fetching data:'</string>, error);
-12     });</code></pre>
-
-
+12     });
+</code></pre>
 
 <hr>
 
@@ -255,22 +280,27 @@
         </div>
         <div class="tab-content" id="v-pills-tabContent">
           <div class="tab-pane fade show active" id="v-pills-ok" role="tabpanel" aria-labelledby="v-pills-ok-tab" tabindex="0">
-            <pre><code>1<comments>  //http://209.38.254.29/api/cryptocurrency/btc</comments>
-2  {  
-3    <proberty>"name"</proberty> : <string>"Bitcoin"</string>,
-4    <proberty>"symbol"</proberty> : <string>"BTC"</string>,
-5    <proberty>"logo"</proberty> : <string>"https://s2.coinmarketcap.com/static/img/coins/..."</string>,
-6    <proberty>"description"</proberty> : <string>"Bitcoin ist eine dezentrale digitale Währun..."</string>,
-7    <proberty>"website"</proberty> : "<string>https://www.bitcoin.org"</string>,
-8
-9    <proberty>"metadata"</proberty>: {
-10        <proberty>"status_code"</proberty>:<string>200</string>
-11      }
-12 }
-</code></pre>
-          </div>
+            <pre><code>1<comments>  //http://localhost:3000/api/cryptocurrency/listings/btc</comments>
+2     {  
+3       <proberty>"id"</proberty> : <string>1</string>,
+4       <proberty>"name"</proberty> : <string>"Bitcoin"</string>,
+5       <proberty>"symbol"</proberty> : <string>"BTC"</string>,
+6       <proberty>"logo"</proberty> : <string>"https://s2.coinmarketcap.com/static/img/coins/..."</string>,
+7       <proberty>"description"</proberty> : <string>"Bitcoin ist eine dezentrale digitale Währun..."</string>,
+8       <proberty>"website"</proberty> : "<string>https://www.bitcoin.org"</string>, 
+9            <proberty>tags</proberty> : [
+10                <string>"mineable"</string>,
+11                <string>"pow"</string>,
+12                <string>"sha-256""</string>,
+13                <string>"store-of-value"</string>
+14                ],
+15                <proberty>"status"</proberty>: {
+15                     <proberty>"status_code"</proberty>:<string> 200</string>,
+16                     <proberty>"status_msg"</proberty>:<string> OK</string>
+17                     }
+</code></pre>          </div>
           <div class="tab-pane fade" id="v-pills-forbidden" role="tabpanel" aria-labelledby="v-pills-forbidden-tab" tabindex="0">
-<pre><code>1<comments>  //http://209.38.254.29/NOACCES</comments>
+<pre><code>1<comments>  //http://localhost:3000/NOACCES</comments>
 2  {
 3    <proberty>"status_code"</proberty> : <string>"403"</string>,
 4    <proberty>"status_msg"</proberty> : <string>"Forbidden"</string>,
@@ -279,7 +309,7 @@
 7  }</code></pre>
           </div>
           <div class="tab-pane fade" id="v-pills-notfound" role="tabpanel" aria-labelledby="v-pills-notfound-tab" tabindex="0">
-            <pre><code>1<comments>  //http://209.38.254.29/api/PATHNOTEXIST</comments>
+            <pre><code>1<comments>  //http://localhost:3000/api/PATHNOTEXIST</comments>
 2  {
 3    <proberty>"status_code"</proberty> : <string>"404"</string>,
 4    <proberty>"status_msg"</proberty> : <string>"path_not_found"</string>,
@@ -303,5 +333,4 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
-
 </html>
