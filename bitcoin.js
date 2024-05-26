@@ -6,31 +6,11 @@ const fs = require('fs');
 // Statische Dateien (HTML, CSS, JS) bereitstellen
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', (req, res) => {
-  const indexPath = path.join(__dirname, 'public', 'index.html');
-  res.sendFile(indexPath);
-});
-
-app.get('/api', (req, res) => {
-  const location = "/api";
-  res.status(404).json({
-    "status_code": "404",
-    "status_msg": "path_not_found",
-    "time_stamp": Date.now(),
-    "request": `Error occurred with {${location}}`
-  });
-});
-
-app.get('/api/documentation', (req, res) => {
-  const indexPath = path.join(__dirname, 'public', 'doc.html');
-  res.sendFile(indexPath);
-});
-
-// Pfad zur JSON-Datei definieren
-const dataPath = path.join(__dirname, 'public', 'cryptocurrency-metadata.json');
 
 // JSON-Daten einmal lesen
 let jsonData = null;
+const dataPath = path.join(__dirname, 'public', 'cryptocurrency-metadata.json');
+
 fs.readFile(dataPath, 'utf8', (err, data) => {
   if (err) {
     console.error('Fehler beim Lesen der JSON-Datei:', err);
@@ -45,13 +25,20 @@ fs.readFile(dataPath, 'utf8', (err, data) => {
   }
 });
 
-app.get("/api/cryptocurrency", (req, res) => {
-  const indexPath = path.join(__dirname, 'public', 'cryptocurrency-metadata.json');
-  res.sendFile(indexPath);
+// Routen
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// Routen für verschiedene Coins
-app.get('/api/cryptocurrency/:coin', (req, res) => {
+app.get('/api/cryptocurrency/metajson', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'metajson.json'));
+});
+
+app.get('/api/documentation', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'doc.html'));
+});
+
+app.get('/api/cryptocurrency/listings/:coin', (req, res) => {
   const coin = req.params.coin.toLowerCase();
 
   if (jsonData && jsonData[coin]) {
@@ -66,11 +53,36 @@ app.get('/api/cryptocurrency/:coin', (req, res) => {
   }
 });
 
+app.get('/api/cryptocurrency/listings', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'coin-list.json'));
+});
 
+app.get('/api/cryptocurrency/tags/:tagName', (req, res) => {
+  const tagName = req.params.tagName.toLowerCase();
+  const filteredCoins = {};
 
-app.get('/api/prices', (req, res) => {
-  const indexPath = path.join(__dirname, 'public', 'prices.json');
-  res.sendFile(indexPath);
+  // Durchlaufe alle Coins und überprüfe, ob der Tag vorhanden ist
+  Object.keys(jsonData).forEach(coinSymbol => {
+    const coinData = jsonData[coinSymbol];
+    if (coinData.tags && coinData.tags.includes(tagName)) {
+      filteredCoins[coinSymbol] = coinData;
+    }
+  });
+
+  if (Object.keys(filteredCoins).length > 0) {
+    res.json(filteredCoins);
+  } else {
+    res.status(404).json({
+      "status_code": "404",
+      "status_msg": "Coins not Found with tag",
+      "time_stamp": Date.now(),
+      "request": `Error occurred with tag: {${tagName}}`
+    });
+  }
+});
+
+app.get('/api/cryptocurrency/tags', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'tag-list.json'));
 });
 
 // Fallback für alle anderen ungültigen Endpunkte
@@ -88,5 +100,3 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server läuft auf Port ${PORT}`);
 });
-
-
