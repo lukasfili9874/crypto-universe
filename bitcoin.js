@@ -3,76 +3,10 @@ const app = express();
 const path = require('path');
 const fs = require('fs');
 const axios = require('axios');
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcryptjs');
-const sqlite3 = require('sqlite3').verbose();
-require('dotenv').config();
-const helmet = require('helmet');
 
-// Sicherheitsheader setzen
-app.use(helmet());
-app.use(express.json());
 
-const db = new sqlite3.Database('./users.db');
 
-// Middleware zur Überprüfung des JWT
-const authenticateToken = (req, res, next) => {
-  const authHeader = req.headers['authorization'];
-  const token = authHeader && authHeader.split(' ')[1];
 
-  if (token == null) return res.sendStatus(401);
-
-  jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
-    if (err) return res.sendStatus(403);
-    req.user = user;
-    next();
-  });
-};
-
-// Benutzerregistrierung
-app.post('/register', async (req, res) => {
-  const { username, password } = req.body;
-  const hashedPassword = await bcrypt.hash(password, 10);
-
-  db.run('INSERT INTO users (username, password) VALUES (?, ?)', [username, hashedPassword], function(err) {
-    if (err) {
-      return res.status(400).json({ error: 'Username already exists' });
-    }
-    res.status(201).json({ message: 'User registered' });
-  });
-});
-
-// Benutzerlogin
-app.post('/login', (req, res) => {
-  const { username, password } = req.body;
-
-  db.get('SELECT * FROM users WHERE username = ?', [username], async (err, user) => {
-    if (err) return res.sendStatus(500);
-    if (!user || !(await bcrypt.compare(password, user.password))) {
-      return res.status(400).json({ error: 'Invalid credentials' });
-    }
-
-    const accessToken = jwt.sign({ username: user.username }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '30d' });
-    res.json({ accessToken });
-  });
-});
-
-// Ratenlimit-Middleware
-const rateLimit = (req, res, next) => {
-  const username = req.user.username;
-
-  db.get('SELECT api_requests FROM users WHERE username = ?', [username], (err, user) => {
-    if (err) return res.sendStatus(500);
-    if (user.api_requests >= 100) {
-      return res.status(429).json({ error: 'Monthly request limit reached' });
-    }
-
-    db.run('UPDATE users SET api_requests = api_requests + 1 WHERE username = ?', [username], (err) => {
-      if (err) return res.sendStatus(500);
-      next();
-    });
-  });
-};
 
 // Statische Dateien (HTML, CSS, JS) bereitstellen
 app.use(express.static(path.join(__dirname, 'public')));
@@ -108,11 +42,11 @@ app.get('/api/documentation', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'doc.html'));
 });
 
-app.get('/api/cryptocurrency/listings/latest', authenticateToken, rateLimit, async (req, res) => {
+app.get('/api/cryptocurrency/listings/latest', async (req, res) => {
   try {
     const response = await axios.get('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest', {
       headers: {
-        'X-CMC_PRO_API_KEY': process.env.CMC_PRO_API_KEY,
+        'X-CMC_PRO_API_KEY': '6b6e99ca-2f54-4ec5-8921-2cd2b704886e',
       },
     });
     res.json(response.data);
@@ -122,16 +56,16 @@ app.get('/api/cryptocurrency/listings/latest', authenticateToken, rateLimit, asy
   }
 });
 
-app.get('/api/cryptocurrency/listings', authenticateToken, rateLimit, (req, res) => {
+app.get('/api/cryptocurrency/listings', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'coin-list.json'));
 });
 
-app.get('/api/cryptocurrency/tags/:tagName', authenticateToken, rateLimit, async (req, res) => {
+app.get('/api/cryptocurrency/tags/:tagName', async (req, res) => {
   const tagName = req.params.tagName.toLowerCase();
   try {
     const response = await axios.get('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest', {
       headers: {
-        'X-CMC_PRO_API_KEY': process.env.CMC_PRO_API_KEY,
+        'X-CMC_PRO_API_KEY': '6b6e99ca-2f54-4ec5-8921-2cd2b704886e',
       },
     });
 
@@ -155,23 +89,11 @@ app.get('/api/cryptocurrency/tags/:tagName', authenticateToken, rateLimit, async
   }
 });
 
-app.get('/api/cryptocurrency/tags', authenticateToken, rateLimit, (req, res) => {
+app.get('/api/cryptocurrency/tags', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'tag-list.json'));
 });
 
-// Dashboard für den Benutzer
-app.get('/dashboard', authenticateToken, (req, res) => {
-  const username = req.user.username;
-
-  db.get('SELECT api_requests FROM users WHERE username = ?', [username], (err, user) => {
-    if (err) return res.sendStatus(500);
-    res.json({
-      username: username,
-      api_requests: user.api_requests,
-      remaining_requests: 100 - user.api_requests,
-    });
-  });
-});
+;
 
 // Fallback für alle anderen ungültigen Endpunkte
 app.use((req, res, next) => {
