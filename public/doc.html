@@ -211,12 +211,12 @@
         <tr>
             <td>GET</td>
             <td>/api/cryptocurrency/listings</td>
-            <td class="description-column">View every Coin we can provide at the moment</td>
+            <td class="description-column">Rettrieves a list of every Coinwe provide</td>
         </tr>
         <tr>
             <td>GET</td>
-            <td>/api/cryptocurrency/listings/{symbol}</td>
-            <td class="description-column">Retrieves data for a specific cryptocurrency based on the symbol you can find in the Coin List.</td>
+            <td>/api/cryptocurrency/listings/latest</td>
+            <td class="description-column">Rettrieves data of every Coin such as name, symbols, prices and more.</td>
         </tr>
         <tr>
             <td>GET</td>
@@ -245,7 +245,7 @@
             <td></td>
         </tbody>
     </table>
-    
+    -
     <h3>Example</h3>
     <p>Retrieve data for Bitcoin using the following example code:</p>
     <pre><code>1 <comments>   //Define the URL and setup the response structure</comments>
