@@ -1,6 +1,7 @@
 async function fetchGlobalMetrics() {
     try {
-        const response = await fetch('http://localhost:3030/api/crypto');
+        const url = `${window.location.origin}/api/cryptocurrency/listings/latest`;
+        const response = await fetch(url);
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }

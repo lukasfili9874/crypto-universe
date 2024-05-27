@@ -164,7 +164,7 @@
 
     <script>async function fetchGlobalMetrics() {
         try {
-            const response = await fetch('http://localhost:3000/api/cryptocurrency/metajson');
+            const response = await fetch('http://209.38.254.29/metajson');
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
@@ -249,7 +249,7 @@
     <h3>Example</h3>
     <p>Retrieve data for Bitcoin using the following example code:</p>
     <pre><code>1 <comments>   //Define the URL and setup the response structure</comments>
-2    <method>fetch</method>(<string>'http://localhost:3000/api/cryptocurrency/listings/btc'</string>)
+2    <method>fetch</method>(<string>'http://{baseURL}/api/cryptocurrency/listings/btc'</string>)
 3       <method>.then</method>(response <let>=></let> response.<method>json</method><let>()</let>)
 4       <method>.then</method>(data <let>=> {</let>
 5
@@ -280,7 +280,7 @@
         </div>
         <div class="tab-content" id="v-pills-tabContent">
           <div class="tab-pane fade show active" id="v-pills-ok" role="tabpanel" aria-labelledby="v-pills-ok-tab" tabindex="0">
-            <pre><code>1<comments>  //http://localhost:3000/api/cryptocurrency/listings/btc</comments>
+            <pre><code>1<comments>  //http://{baseURL}/api/cryptocurrency/listings/btc</comments>
 2     {  
 3       <proberty>"id"</proberty> : <string>1</string>,
 4       <proberty>"name"</proberty> : <string>"Bitcoin"</string>,
@@ -300,7 +300,7 @@
 17                     }
 </code></pre>          </div>
           <div class="tab-pane fade" id="v-pills-forbidden" role="tabpanel" aria-labelledby="v-pills-forbidden-tab" tabindex="0">
-<pre><code>1<comments>  //http://localhost:3000/NOACCES</comments>
+<pre><code>1<comments>  //http://{baseURL}/NOACCES</comments>
 2  {
 3    <proberty>"status_code"</proberty> : <string>"403"</string>,
 4    <proberty>"status_msg"</proberty> : <string>"Forbidden"</string>,
@@ -309,7 +309,7 @@
 7  }</code></pre>
           </div>
           <div class="tab-pane fade" id="v-pills-notfound" role="tabpanel" aria-labelledby="v-pills-notfound-tab" tabindex="0">
-            <pre><code>1<comments>  //http://localhost:3000/api/PATHNOTEXIST</comments>
+            <pre><code>1<comments>  //http://{baseURL}/api/PATHNOTEXIST</comments>
 2  {
 3    <proberty>"status_code"</proberty> : <string>"404"</string>,
 4    <proberty>"status_msg"</proberty> : <string>"path_not_found"</string>,
